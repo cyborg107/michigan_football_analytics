@@ -17,3 +17,10 @@ team = st.selectbox(
 )
 
 st.write(f"Selected Team: {team}")
+
+team_games = df[
+    (df["homeTeam"] == team) |
+    (df["awayTeam"] == team)
+]
+
+st.dataframe(team_games)
